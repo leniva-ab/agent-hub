@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "New-project process and evidence-based dependency selection.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

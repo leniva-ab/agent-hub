@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "GitHub worktree and stacked-PR workflow with agent-safe gh stack commands.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "cmux conventions and the control plane for many runs and projects.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

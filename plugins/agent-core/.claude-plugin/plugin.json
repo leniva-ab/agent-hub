@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Team workflow on top of Superpowers: roles, flow, loops, and the independent verifier and researcher subagents.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

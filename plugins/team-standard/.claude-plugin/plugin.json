@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "The standard agent setup for a repo: workflow, guardrails, setup checks and Superpowers. Contains no content of its own. Review, greenfield, cmux and integrations are separate opt-in plugins.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
   "license": "MIT",
   "dependencies": [
@@ -14,5 +14,7 @@
       "name": "superpowers",
       "marketplace": "claude-plugins-official"
     }
-  ]
+  ],
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

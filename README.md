@@ -37,4 +37,4 @@ Details and token costs: [docs/plugins.md](docs/plugins.md).
 | [docs/naming.md](docs/naming.md) | Naming rules for plugins, commands, skills, env vars |
 | [docs/other-tools.md](docs/other-tools.md) | Copilot, Codex, opencode and Cursor |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Set up, tests, code style, commits, adding a plugin |
-| [LICENSE](LICENSE) | MIT |
+| [LICENSE](LICENSE) | MIT, copyright LeNivA AB |
