@@ -1,0 +1,12 @@
+{
+  "plugins/agent-cmux": "0.1.0",
+  "plugins/agent-core": "0.1.0",
+  "plugins/agent-greenfield": "0.1.0",
+  "plugins/agent-guardrails": "0.1.0",
+  "plugins/agent-review": "0.1.0",
+  "plugins/agent-setup": "0.1.0",
+  "plugins/integration-commits": "0.1.0",
+  "plugins/integration-github": "0.1.0",
+  "plugins/integration-jira": "0.1.0",
+  "plugins/team-standard": "0.1.0"
+}

@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "checked": "2026-11-10",
+  "note": "Single source of truth for tool versions, models and cooldown settings. Change a floor only for a real reason. Update targets from the sources.",
+  "tools": {
+    "git": {
+      "cmd": ["git", "--version"], "parse": "(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "floor": "2.36", "target": "2.55.0", "required": true,
+      "why": "gh stack worktree support",
+      "install": "Apple's Git can be older. Install with Homebrew (brew install git) or from https://git-scm.com",
+      "source": "https://git-scm.com"
+    },
+    "gh": {
+      "cmd": ["gh", "--version"], "parse": "(\\d+\\.\\d+\\.\\d+)",
+      "floor": "2.97.0", "target": "2.103.3",
+      "why": "security fixes",
+      "install": "https://cli.github.com (macOS: brew upgrade gh)",
+      "source": "https://github.com/cli/cli/releases"
+    },
+    "gh-stack": {
+      "cmd": ["gh", "extension", "list"], "parse": "(?im)^.*\\bstack\\b.*?v?(\\d+\\.\\d+(?:\\.\\d+)?)",
+      "needs": "gh",
+      "floor": "0.2.0", "target": "0.2.1",
+      "why": "worktree support",
+      "install": "gh extension install github/gh-stack (upgrade: gh extension upgrade stack)",
+      "source": "https://github.com/github/gh-stack/releases"
+    },
+    "claude": {
+      "cmd": ["claude", "--version"], "parse": "(\\d+\\.\\d+\\.\\d+)",
+      "floor": "2.1.81", "target": "2.1.322",
+      "why": "Superpowers hook on Windows",
+      "install": "claude update",
+      "source": "https://code.claude.com/docs/en/changelog"
+    },
+    "copilot": {
+      "cmd": ["copilot", "version"], "parse": "(\\d+\\.\\d+\\.\\d+)",
+      "floor": "1.0.11", "target": "1.0.96",
+      "why": "Superpowers session context",
+      "install": "copilot update",
+      "source": "not re-checked since 2026-10-27"
+    },
+    "python3": {
+      "cmd": ["python3", "--version"], "parse": "(\\d+\\.\\d+\\.\\d+)",
+      "floor": "3.13", "target": "3.15.2",
+      "why": "the plugin scripts need 3.13 or later (tested on 3.13, 3.14 and 3.15)",
+      "install": "https://www.python.org/downloads/ or uv python install 3.13",
+      "source": "https://www.python.org/downloads/"
+    }
+  },
+  "plugins": {
+    "superpowers@claude-plugins-official": {
+      "floor": "6.3.0", "target": "7.0.0",
+      "note": "7.0.0 read from the official marketplace on 2026-11-10. Release notes not read. Floor not re-checked against 7.x.",
+      "check": "claude plugin list"
+    }
+  },
+  "models": {
+    "strongest": {"alias": "opus", "id": "claude-opus-5-5"},
+    "mid": {"alias": "sonnet", "id": "claude-sonnet-5-5"},
+    "small": {"alias": "haiku", "id": "claude-haiku-5-5"}
+  },
+  "cooldown": {
+    "days": 3,
+    "note": "Delays installs only. It does not detect malicious packages. Version updates only: update bots let security updates through.",
+    "settings": {
+      "npm": {"min": "11.10.0", "where": ".npmrc", "set": "min-release-age=3"},
+      "pnpm": {"min": "10.16", "where": "pnpm-workspace.yaml", "set": "minimumReleaseAge: 4320"},
+      "yarn": {"min": "4.10", "where": ".yarnrc.yml", "set": "npmMinimalAgeGate: 3d", "note": "duration format not verified"},
+      "bun": {"min": "1.3", "where": "bunfig.toml", "set": "install.minimumReleaseAge = 259200"},
+      "pip": {"min": "26.1", "where": "command line", "set": "--uploaded-prior-to P3D"},
+      "uv": {"min": "0.9.17", "where": "pyproject.toml", "set": "exclude-newer = \"3 days\""},
+      "dependabot": {"where": ".github/dependabot.yml", "set": "cooldown:\n  default-days: 3"},
+      "renovate": {"where": "renovate.json", "set": "\"minimumReleaseAge\": \"3 days\""},
+      "maven": {"note": "no stable native setting found; use dependabot or renovate and check the publish date by hand"},
+      "gradle": {"note": "no stable native setting found; use dependabot or renovate and check the publish date by hand"},
+      "go": {"note": "no native setting; use dependabot or renovate and check the publish date by hand"},
+      "cargo": {"note": "native setting is nightly only; use dependabot or renovate"}
+    }
+  }
+}

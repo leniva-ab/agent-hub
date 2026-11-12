@@ -1,0 +1,7 @@
+target-version = "py313"
+line-length = 120
+[lint]
+select = ["E","F","W","I","UP","B","C4","SIM","PTH","RET","PERF","PL","RUF","D","ANN","ARG","TRY","FURB","N"]
+ignore = ["D203","D213","PLR0913","PLR2004","TRY003","PLR0911","PLR0912","PLR0915","ANN401","E501"]
+[lint.pydocstyle]
+convention = "google"

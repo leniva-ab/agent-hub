@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "required": ["verdicts"],
+  "properties": {
+    "verdicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "verdict", "reason"],
+        "properties": {
+          "id": {"type": "string"},
+          "verdict": {"enum": ["confirmed", "rejected", "needs_evidence"]},
+          "reason": {"type": "string", "maxLength": 600},
+          "question": {"type": "string", "maxLength": 300, "description": "required when needs_evidence"},
+          "severity": {"enum": ["critical", "major", "minor", "nit"], "description": "set only if you change it"}
+        }
+      }
+    }
+  }
+}
