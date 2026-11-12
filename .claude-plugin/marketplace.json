@@ -57,6 +57,26 @@
       "name": "integration-commits",
       "source": "./plugins/integration-commits",
       "description": "Conventional Commits and commitlint."
+    },
+    {
+      "name": "agent-routing",
+      "source": "./plugins/agent-routing",
+      "description": "Enforces model routing: denies subagent spawns that would inherit the session model."
+    },
+    {
+      "name": "agent-tokens",
+      "source": "./plugins/agent-tokens",
+      "description": "Token hygiene: doctor, context audit and a raw-output keeper."
+    },
+    {
+      "name": "agent-telemetry",
+      "source": "./plugins/agent-telemetry",
+      "description": "Local OpenTelemetry for Claude Code, tagged by config version, with a token and cost report."
+    },
+    {
+      "name": "agent-learning",
+      "source": "./plugins/agent-learning",
+      "description": "Learning loop: log corrections, promote them to lasting places, measure repeats."
     }
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "agent-tokens",
+  "version": "0.1.0",
+  "description": "Token hygiene: a doctor for tokf and sem, an audit of what loads every session, and a raw-output keeper for evidence.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}
