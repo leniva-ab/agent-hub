@@ -1,0 +1,9 @@
+{
+  "name": "agent-core",
+  "version": "0.1.0",
+  "description": "Team workflow on top of Superpowers: roles, flow, loops, and the independent verifier and researcher subagents.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

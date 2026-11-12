@@ -1,0 +1,9 @@
+{
+  "name": "agent-greenfield",
+  "version": "0.1.0",
+  "description": "New-project process and evidence-based dependency selection.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

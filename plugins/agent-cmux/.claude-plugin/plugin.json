@@ -1,0 +1,9 @@
+{
+  "name": "agent-cmux",
+  "version": "0.1.0",
+  "description": "cmux conventions and the control plane for many runs and projects.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

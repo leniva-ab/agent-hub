@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "required": ["run_id", "project", "kind", "ref", "state", "stage", "updated", "next_human_action"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "project": {"type": "string", "pattern": "^[a-z0-9]{2,5}$"},
+    "kind": {"enum": ["review", "build", "verify", "research"]},
+    "ref": {"type": "string"},
+    "state": {"enum": ["queued", "running", "waiting_human", "blocked", "failed", "done", "cancelled"]},
+    "stage": {"type": "string"},
+    "round": {"type": "integer", "minimum": 0},
+    "progress": {"type": "number", "minimum": 0, "maximum": 1},
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "state"],
+        "properties": {
+          "role": {"type": "string"},
+          "model": {"type": "string"},
+          "state": {"enum": ["queued", "running", "done", "failed"]},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "next_human_action": {"type": ["string", "null"]},
+    "cmux": {"type": "object", "properties": {"window": {"type": "string"}, "workspace": {"type": "string"}}},
+    "updated": {"type": "string"}
+  }
+}

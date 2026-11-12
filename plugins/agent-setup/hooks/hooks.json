@@ -1,0 +1,18 @@
+{
+  "description": "Report tool versions below the team floor at session start",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/agent_versions.py", "check", "--hook"],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

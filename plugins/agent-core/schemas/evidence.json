@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Evidence JSON written by the verifier. Validate with: agent-evidence check <file>",
+  "type": "object",
+  "required": ["task", "verified", "criteria", "checks", "exclusions", "models", "commit"],
+  "properties": {
+    "task": {"type": "string"},
+    "verified": {"type": "boolean"},
+    "criteria": {"type": "array", "items": {"type": "object", "required": ["id", "result"], "properties": {"id": {"type": "string"}, "unit": {"type": "string"}, "e2e": {"type": "string"}, "result": {"enum": ["pass", "fail", "not_verified"]}}}},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["name", "result", "evidence"], "properties": {"name": {"enum": ["build and lint", "unit tests", "diff coverage", "mutation", "e2e", "review"]}, "result": {"enum": ["pass", "fail", "not_verified"]}, "evidence": {"type": "string"}}}},
+    "exclusions": {"type": "array", "items": {"type": "string"}},
+    "models": {"type": "object"},
+    "commit": {"type": "string"}
+  }
+}

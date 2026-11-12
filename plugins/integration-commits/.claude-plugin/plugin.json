@@ -1,0 +1,9 @@
+{
+  "name": "integration-commits",
+  "version": "0.1.0",
+  "description": "Conventional Commits and commitlint rules for agents.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

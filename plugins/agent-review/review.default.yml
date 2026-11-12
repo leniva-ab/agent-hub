@@ -1,0 +1,53 @@
+# Review pipeline config. Read by the orchestrator (docs/agents/review.md).
+# Shape inspired by common PR-review tools. Keys are ours, not compatible with any vendor format.
+version: 1
+language: en
+profile: balanced          # chill = critical+major only | balanced = + minor | assertive = + nits
+post: draft                # draft = stop for a human to approve inside the cmux workspace | auto
+verdict: comment           # comment only. Approve or request-changes stays a human decision.
+execution: inprocess       # inprocess = subagents inside one session | panes = one cmux surface per agent
+max_parallel: 4
+base_branches: [main]
+
+path_filters:              # files never reviewed
+  - "!**/*.lock"
+  - "!**/generated/**"
+  - "!**/*.min.js"
+
+path_instructions:         # extra guidance and extra categories by path
+  - path: "**/auth/**"
+    categories: [security, correctness]
+    instructions: "Any change to authentication or authorisation is critical until shown safe."
+  - path: "**/migrations/**"
+    categories: [correctness, operability]
+    instructions: "Check rollback, locking and data loss."
+  - path: "**/*Test*.*"
+    categories: [tests]
+
+categories:                # tier = strongest | mid | small. See AGENTS.md section 3.
+  correctness:     {enabled: true, tier: mid}
+  security:        {enabled: true, tier: strongest}
+  tests:           {enabled: true, tier: mid}      # every AC tested, tests that can fail, coverage gaps
+  maintainability: {enabled: true, tier: mid}      # KISS, DRY, naming, needless complexity
+  performance:     {enabled: true, tier: mid}
+  compatibility:   {enabled: true, tier: mid}      # public contracts, forward-only, deprecated APIs
+  dependencies:    {enabled: true, tier: mid}      # new or changed dependencies vs docs/agents/dependencies.md
+  operability:     {enabled: true, tier: mid}      # errors, logging, config, health, metrics
+  spec:            {enabled: true, tier: strongest} # diff vs spec, ACs and decision records
+
+roles:
+  validator:  {tier: strongest}
+  deduper:    {tier: small}
+  summarizer: {tier: mid}
+
+limits:
+  max_findings_per_category: 8
+  max_evidence_rounds: 2          # validator -> reviewer round trips per finding
+  max_comments_posted: 25
+  max_turns_per_agent: 12
+  max_budget_usd_per_agent: 2.0   # used only where the tool supports a budget flag
+
+suppress:                  # known false positives. A finding matching one is dropped and counted.
+  - pattern: "TODO without ticket"
+    paths: ["docs/**"]
+    reason: "Docs may hold open questions."

@@ -1,0 +1,9 @@
+{
+  "name": "integration-jira",
+  "version": "0.1.0",
+  "description": "Jira as the work record, with run-time discovery of each team's configuration.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

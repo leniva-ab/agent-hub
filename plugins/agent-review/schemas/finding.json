@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": ["category", "findings"],
+  "properties": {
+    "category": {"type": "string"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "severity", "confidence", "file", "line", "claim", "evidence", "verify_by"],
+        "properties": {
+          "id": {"type": "string"},
+          "severity": {"enum": ["critical", "major", "minor", "nit"]},
+          "confidence": {"enum": ["high", "medium", "low"]},
+          "file": {"type": "string"},
+          "line": {"type": "integer", "minimum": 1},
+          "end_line": {"type": "integer", "minimum": 1},
+          "claim": {"type": "string", "maxLength": 400},
+          "evidence": {"type": "string", "maxLength": 1200},
+          "suggestion": {"type": "string", "maxLength": 1200},
+          "verify_by": {"type": "string", "maxLength": 300}
+        }
+      }
+    },
+    "clean": {"type": "boolean", "description": "true when the category was checked and nothing was found"}
+  }
+}

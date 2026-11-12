@@ -1,0 +1,32 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.13", "3.15"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install pytest
+      - name: Plugin tests
+        run: |
+          for p in agent-guardrails agent-setup agent-core agent-cmux; do
+            (cd "plugins/$p" && python -m pytest -q tests)
+          done
+      - name: Manifests are valid JSON
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          for f in pathlib.Path(".").rglob("*.json"):
+              if ".git" not in f.parts:
+                  json.loads(f.read_text())
+          PY

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "simple",
+  "include-component-in-tag": true,
+  "include-v-in-tag": true,
+  "tag-separator": "--",
+  "separate-pull-requests": true,
+  "bump-minor-pre-major": true,
+  "bump-patch-for-minor-pre-major": false,
+  "packages": {
+    "plugins/agent-cmux": {
+      "component": "agent-cmux",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-core": {
+      "component": "agent-core",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-greenfield": {
+      "component": "agent-greenfield",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-guardrails": {
+      "component": "agent-guardrails",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-review": {
+      "component": "agent-review",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-setup": {
+      "component": "agent-setup",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/integration-commits": {
+      "component": "integration-commits",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/integration-github": {
+      "component": "integration-github",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/integration-jira": {
+      "component": "integration-jira",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/team-standard": {
+      "component": "team-standard",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    }
+  }
+}

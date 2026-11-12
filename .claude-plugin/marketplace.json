@@ -1,0 +1,62 @@
+{
+  "name": "agent-hub",
+  "owner": {
+    "name": "Platform Team"
+  },
+  "description": "Decoupled agent plugins: workflow, guardrails, review, setup and integrations.",
+  "allowCrossMarketplaceDependenciesOn": [
+    "claude-plugins-official"
+  ],
+  "plugins": [
+    {
+      "name": "team-standard",
+      "source": "./plugins/team-standard",
+      "description": "Standard bundle: core, guardrails, setup and Superpowers."
+    },
+    {
+      "name": "agent-core",
+      "source": "./plugins/agent-core",
+      "description": "Workflow on top of Superpowers, plus the independent verifier and researcher subagents."
+    },
+    {
+      "name": "agent-guardrails",
+      "source": "./plugins/agent-guardrails",
+      "description": "Blocks destructive git, rm and infrastructure commands."
+    },
+    {
+      "name": "agent-setup",
+      "source": "./plugins/agent-setup",
+      "description": "Version floors, installs, and a quiet session-start check."
+    },
+    {
+      "name": "agent-review",
+      "source": "./plugins/agent-review",
+      "description": "Multi-agent PR review pipeline."
+    },
+    {
+      "name": "agent-greenfield",
+      "source": "./plugins/agent-greenfield",
+      "description": "New-project process and dependency selection."
+    },
+    {
+      "name": "agent-cmux",
+      "source": "./plugins/agent-cmux",
+      "description": "cmux conventions and the multi-project control plane."
+    },
+    {
+      "name": "integration-jira",
+      "source": "./plugins/integration-jira",
+      "description": "Jira as the work record."
+    },
+    {
+      "name": "integration-github",
+      "source": "./plugins/integration-github",
+      "description": "Worktrees and stacked PRs with gh stack."
+    },
+    {
+      "name": "integration-commits",
+      "source": "./plugins/integration-commits",
+      "description": "Conventional Commits and commitlint."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "agent-setup",
+  "version": "0.1.0",
+  "description": "Version floors, install steps and a session-start check that reports only problems.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

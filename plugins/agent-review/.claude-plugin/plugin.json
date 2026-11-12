@@ -1,0 +1,12 @@
+{
+  "name": "agent-review",
+  "version": "0.1.0",
+  "description": "Multi-agent PR review: category reviewers, validator, deduper and summarizer.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT",
+  "dependencies": [
+    "agent-core"
+  ]
+}
