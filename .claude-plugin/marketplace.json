@@ -1,7 +1,7 @@
 {
   "name": "agent-hub",
   "owner": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
   "description": "Decoupled agent plugins: workflow, guardrails, review, setup and integrations.",
   "allowCrossMarketplaceDependenciesOn": [

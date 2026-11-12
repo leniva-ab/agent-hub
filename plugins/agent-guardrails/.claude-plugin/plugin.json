@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Hooks that block destructive git, rm and infrastructure commands, plus the safety rules.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

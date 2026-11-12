@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Enforces model routing: a hook denies subagent spawns that would inherit the session model, and agent-route audits which agents pin a model.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

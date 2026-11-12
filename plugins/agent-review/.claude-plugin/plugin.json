@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "description": "Multi-agent PR review: category reviewers, validator, deduper and summarizer.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
   "license": "MIT",
   "dependencies": [
     "agent-core"
-  ]
+  ],
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

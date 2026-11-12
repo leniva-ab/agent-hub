@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "A learning loop: log corrections, promote each to a lasting place (CLAUDE.md, rule, skill or hook), prune, and measure the repeat-correction rate.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }

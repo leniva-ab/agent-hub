@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Jira as the work record, with run-time discovery of each team's configuration.",
   "author": {
-    "name": "Platform Team"
+    "name": "LeNivA AB"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/leniva-ab/agent-hub",
+  "repository": "https://github.com/leniva-ab/agent-hub"
 }
