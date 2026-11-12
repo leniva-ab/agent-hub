@@ -1,0 +1,9 @@
+{
+  "name": "agent-routing",
+  "version": "0.1.0",
+  "description": "Enforces model routing: a hook denies subagent spawns that would inherit the session model, and agent-route audits which agents pin a model.",
+  "author": {
+    "name": "Platform Team"
+  },
+  "license": "MIT"
+}

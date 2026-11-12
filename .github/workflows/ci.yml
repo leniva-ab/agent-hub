@@ -19,7 +19,7 @@ jobs:
       - run: python -m pip install pytest
       - name: Plugin tests
         run: |
-          for p in agent-guardrails agent-setup agent-core agent-cmux; do
+          for p in agent-guardrails agent-setup agent-core agent-cmux agent-routing agent-tokens agent-telemetry agent-learning; do
             (cd "plugins/$p" && python -m pytest -q tests)
           done
       - name: Manifests are valid JSON

@@ -48,6 +48,16 @@
         }
       ]
     },
+    "plugins/agent-learning": {
+      "component": "agent-learning",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
     "plugins/agent-review": {
       "component": "agent-review",
       "extra-files": [
@@ -58,8 +68,38 @@
         }
       ]
     },
+    "plugins/agent-routing": {
+      "component": "agent-routing",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
     "plugins/agent-setup": {
       "component": "agent-setup",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-telemetry": {
+      "component": "agent-telemetry",
+      "extra-files": [
+        {
+          "type": "json",
+          "path": ".claude-plugin/plugin.json",
+          "jsonpath": "$.version"
+        }
+      ]
+    },
+    "plugins/agent-tokens": {
+      "component": "agent-tokens",
       "extra-files": [
         {
           "type": "json",
